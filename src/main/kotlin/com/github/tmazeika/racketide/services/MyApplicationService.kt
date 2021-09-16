@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.tmazeika.racketide.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.tmazeika.racketide.MyBundle
 
 class MyApplicationService {
 
