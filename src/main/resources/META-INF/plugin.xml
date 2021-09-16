@@ -7,12 +7,19 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.tmazeika.racketide.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.tmazeika.racketide.services.MyProjectService"/>
+        <fileType
+                name="Racket File"
+                implementationClass="org.intellij.sdk.language.RacketFileType"
+                fieldName="INSTANCE"
+                language="Racket"
+                extensions="rkt"/>
+        <lang.parserDefinition
+                language="Racket"
+                implementationClass="org.intellij.sdk.language.RacketParserDefinition"/>
+        <lang.syntaxHighlighterFactory
+                language="Racket"
+                implementationClass="org.intellij.sdk.language.RacketSyntaxHighlighterFactory"/>
+        <colorSettingsPage
+                implementation="org.intellij.sdk.language.RacketColorSettingsPage"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.tmazeika.racketide.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
 </idea-plugin>
